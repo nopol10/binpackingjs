@@ -1,6 +1,6 @@
 {
   "name": "binpackingjs",
-  "version": "2.2.4",
+  "version": "2.2.6",
   "description": "2D, 3D, 4D Bin Packing",
   "repository": {
     "type": "git",
@@ -14,6 +14,16 @@
     "test-dev": "mocha --watch --compilers js:babel-core/register ./test/*.js"
   },
   "author": "Long Nguyen",
+  "contributors": [
+    {
+      "name": "Paul Dechov",
+      "url": "https://github.com/dechov"
+    },
+    {
+      "name": "Jeff Stieler",
+      "url": "https://github.com/jeffstieler"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",

@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,93 +78,48 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var Score = function () {
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Score = function () {
-  function Score(score_1, score_2) {
-    _classCallCheck(this, Score);
-
-    this.score_1 = Score.MAX_INT;
-    this.score_2 = Score.MAX_INT;
-
+  function Score(score_1, score_2) {_classCallCheck(this, Score);this.score_1 = Score.MAX_INT;this.score_2 = Score.MAX_INT;
     if (typeof score_1 != 'undefined') this.score_1 = score_1;
     if (typeof score_2 != 'undefined') this.score_2 = score_2;
   }
 
   /**
-   * Lower is better
-   */
-
-
-  _createClass(Score, [{
-    key: 'valueOf',
-    value: function valueOf() {
+     * Lower is better
+     */_createClass(Score, [{ key: 'valueOf', value: function valueOf()
+    {
       return this.score_1 + this.score_2;
-    }
-  }, {
-    key: 'assign',
-    value: function assign(other) {
+    } }, { key: 'assign', value: function assign(
+
+    other) {
       this.score_1 = other.score_1;
       this.score_2 = other.score_2;
-    }
-  }, {
-    key: 'isBlank',
-    value: function isBlank() {
+    } }, { key: 'isBlank', value: function isBlank()
+
+    {
       return this.score_1 === Score.MAX_INT;
-    }
-  }, {
-    key: 'decreaseBy',
-    value: function decreaseBy(delta) {
+    } }, { key: 'decreaseBy', value: function decreaseBy(
+
+    delta) {
       this.score_1 += delta;
       this.score_2 += delta;
-    }
-  }]);
-
-  return Score;
-}();
-
-Score.MAX_INT = Number.MAX_SAFE_INTEGER;
-exports.default = Score;
+    } }]);return Score;}();Score.MAX_INT = Number.MAX_SAFE_INTEGER;exports.default = Score;
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _Score = __webpack_require__(0);var _Score2 = _interopRequireDefault(_Score);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var
 
+Base = function () {function Base() {_classCallCheck(this, Base);}_createClass(Base, [{ key: "findPositionForNewNode", value: function findPositionForNewNode(
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Score = __webpack_require__(0);
-
-var _Score2 = _interopRequireDefault(_Score);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Base = function () {
-  function Base() {
-    _classCallCheck(this, Base);
-  }
-
-  _createClass(Base, [{
-    key: "findPositionForNewNode",
-    value: function findPositionForNewNode(box, freeRects) {
-      var _this = this;
-
+    box, freeRects) {var _this = this;
       var bestScore = new _Score2.default();
       var width = box.width;
       var height = box.height;
@@ -175,10 +130,9 @@ var Base = function () {
       });
 
       return bestScore;
-    }
-  }, {
-    key: "tryPlaceRectIn",
-    value: function tryPlaceRectIn(freeRect, box, rectWidth, rectHeight, bestScore) {
+    } }, { key: "tryPlaceRectIn", value: function tryPlaceRectIn(
+
+    freeRect, box, rectWidth, rectHeight, bestScore) {
       if (freeRect.width >= rectWidth && freeRect.height >= rectHeight) {
         var score = this.calculateScore(freeRect, rectWidth, rectHeight);
         if (score < bestScore) {
@@ -190,216 +144,117 @@ var Base = function () {
           bestScore.assign(score);
         }
       }
-    }
-  }, {
-    key: "calculateScore",
-    value: function calculateScore(freeRect, rectWidth, rectHeight) {
+    } }, { key: "calculateScore", value: function calculateScore(
+
+    freeRect, rectWidth, rectHeight) {
       throw "NotImplementedError";
-    }
-  }]);
-
-  return Base;
-}();
-
-exports.default = Base;
+    } }]);return Base;}();exports.default = Base;
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _Base2 = __webpack_require__(1);var _Base3 = _interopRequireDefault(_Base2);
+var _Score = __webpack_require__(0);var _Score2 = _interopRequireDefault(_Score);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
 
+BestShortSideFit = function (_Base) {_inherits(BestShortSideFit, _Base);function BestShortSideFit() {_classCallCheck(this, BestShortSideFit);return _possibleConstructorReturn(this, (BestShortSideFit.__proto__ || Object.getPrototypeOf(BestShortSideFit)).apply(this, arguments));}_createClass(BestShortSideFit, [{ key: 'calculateScore', value: function calculateScore(
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Base2 = __webpack_require__(1);
-
-var _Base3 = _interopRequireDefault(_Base2);
-
-var _Score = __webpack_require__(0);
-
-var _Score2 = _interopRequireDefault(_Score);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BestShortSideFit = function (_Base) {
-  _inherits(BestShortSideFit, _Base);
-
-  function BestShortSideFit() {
-    _classCallCheck(this, BestShortSideFit);
-
-    return _possibleConstructorReturn(this, (BestShortSideFit.__proto__ || Object.getPrototypeOf(BestShortSideFit)).apply(this, arguments));
-  }
-
-  _createClass(BestShortSideFit, [{
-    key: 'calculateScore',
-    value: function calculateScore(freeRect, rectWidth, rectHeight) {
+    freeRect, rectWidth, rectHeight) {
       var leftOverHoriz = Math.abs(freeRect.width - rectWidth);
       var leftOverVert = Math.abs(freeRect.height - rectHeight);
-      var args = [leftOverHoriz, leftOverVert].sort(function (a, b) {
-        return a - b;
-      });
+      var args = [leftOverHoriz, leftOverVert].sort(function (a, b) {return a - b;});
       var score = new _Score2.default(args[0], args[1]);
       return score;
-    }
-  }]);
-
-  return BestShortSideFit;
-}(_Base3.default);
-
-exports.default = BestShortSideFit;
+    } }]);return BestShortSideFit;}(_Base3.default);exports.default = BestShortSideFit;
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var Box = function () {
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Box = function () {
-  function Box(width, height) {
-    _classCallCheck(this, Box);
 
-    this.width = null;
-    this.height = null;
-    this.x = 0;
-    this.y = 0;
-    this.packed = false;
 
+  function Box(width, height) {_classCallCheck(this, Box);this.width = null;this.height = null;this.x = 0;this.y = 0;this.packed = false;
     this.width = width;
     this.height = height;
-  }
+  }_createClass(Box, [{ key: "rotate", value: function rotate()
 
-  _createClass(Box, [{
-    key: "rotate",
-    value: function rotate() {
-      var width = this.width,
-          height = this.height;
-
+    {var
+      width = this.width,height = this.height;
       this.width = height;
       this.height = width;
-    }
-  }, {
-    key: "label",
-    get: function get() {
+    } }, { key: "label", get: function get()
+
+    {
       return this.width + "x" + this.height + " at [" + this.x + "," + this.y + "]";
-    }
-  }, {
-    key: "area",
-    get: function get() {
+    } }, { key: "area", get: function get()
+
+    {
       return this.width * this.height;
-    }
-  }]);
-
-  return Box;
-}();
-
-exports.default = Box;
+    } }]);return Box;}();exports.default = Box;
 
 /***/ }),
 /* 4 */,
 /* 5 */,
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.heuristics = exports.Packer = exports.Box = exports.Bin = undefined;
-
-var _Bin = __webpack_require__(7);
-
-var _Bin2 = _interopRequireDefault(_Bin);
-
-var _Box = __webpack_require__(3);
-
-var _Box2 = _interopRequireDefault(_Box);
-
-var _Packer = __webpack_require__(8);
-
-var _Packer2 = _interopRequireDefault(_Packer);
-
-var _heuristics = __webpack_require__(13);
-
-var heuristics = _interopRequireWildcard(_heuristics);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Bin = _Bin2.default;
-exports.Box = _Box2.default;
-exports.Packer = _Packer2.default;
-exports.heuristics = heuristics;
-
-/***/ }),
+/* 6 */,
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.heuristics = exports.Packer = exports.Box = exports.Bin = undefined;var _Bin = __webpack_require__(8);var _Bin2 = _interopRequireDefault(_Bin);
+var _Box = __webpack_require__(3);var _Box2 = _interopRequireDefault(_Box);
+var _Packer = __webpack_require__(9);var _Packer2 = _interopRequireDefault(_Packer);
+var _heuristics = __webpack_require__(14);var heuristics = _interopRequireWildcard(_heuristics);function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.
+
+Bin = _Bin2.default;exports.Box = _Box2.default;exports.Packer = _Packer2.default;exports.heuristics = heuristics;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.FreeSpaceBox = undefined;var _extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _BestShortSideFit = __webpack_require__(2);var _BestShortSideFit2 = _interopRequireDefault(_BestShortSideFit);
+var _Box = __webpack_require__(3);var _Box2 = _interopRequireDefault(_Box);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var
+
+Bin = function () {
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.FreeSpaceBox = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _BestShortSideFit = __webpack_require__(2);
 
-var _BestShortSideFit2 = _interopRequireDefault(_BestShortSideFit);
 
-var _Box = __webpack_require__(3);
-
-var _Box2 = _interopRequireDefault(_Box);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Bin = function () {
-  function Bin(width, height, heuristic) {
-    _classCallCheck(this, Bin);
-
-    this.width = null;
-    this.height = null;
-    this.boxes = [];
-    this.heuristic = null;
-    this.freeRectangles = [];
-
+  function Bin(width, height, heuristic) {_classCallCheck(this, Bin);this.width = null;this.height = null;this.boxes = [];this.heuristic = null;this.freeRectangles = [];
     this.width = width;
     this.height = height;
     this.freeRectangles = [new FreeSpaceBox(width, height)];
     this.heuristic = heuristic || new _BestShortSideFit2.default();
-  }
+  }_createClass(Bin, [{ key: 'insert', value: function insert(
 
-  _createClass(Bin, [{
-    key: 'insert',
-    value: function insert(box) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    box) {
       if (box.packed) return false;
 
       this.heuristic.findPositionForNewNode(box, this.freeRectangles);
@@ -412,7 +267,8 @@ var Bin = function () {
         if (this.splitFreeNode(this.freeRectangles[i], box)) {
           this.freeRectangles.splice(i, 1);
           numRectanglesToProcess--;
-        } else {
+        } else
+        {
           i++;
         }
       }
@@ -421,24 +277,24 @@ var Bin = function () {
       this.boxes.push(box);
 
       return true;
-    }
-  }, {
-    key: 'scoreFor',
-    value: function scoreFor(box) {
+    } }, { key: 'scoreFor', value: function scoreFor(
+
+    box) {
       var copyBox = new _Box2.default(box.width, box.height);
       var score = this.heuristic.findPositionForNewNode(copyBox, this.freeRectangles);
       return score;
-    }
-  }, {
-    key: 'isLargerThan',
-    value: function isLargerThan(box) {
+    } }, { key: 'isLargerThan', value: function isLargerThan(
+
+    box) {
       return this.width >= box.width && this.height >= box.height || this.height >= box.width && this.width >= box.height;
-    }
-  }, {
-    key: 'splitFreeNode',
-    value: function splitFreeNode(freeNode, usedNode) {
+    } }, { key: 'splitFreeNode', value: function splitFreeNode(
+
+    freeNode, usedNode) {
       // Test with SAT if the rectangles even intersect.
-      if (usedNode.x >= freeNode.x + freeNode.width || usedNode.x + usedNode.width <= freeNode.x || usedNode.y >= freeNode.y + freeNode.height || usedNode.y + usedNode.height <= freeNode.y) {
+      if (usedNode.x >= freeNode.x + freeNode.width ||
+      usedNode.x + usedNode.width <= freeNode.x ||
+      usedNode.y >= freeNode.y + freeNode.height ||
+      usedNode.y + usedNode.height <= freeNode.y) {
         return false;
       }
 
@@ -446,54 +302,48 @@ var Bin = function () {
       this.trySplitFreeNodeHorizontally(freeNode, usedNode);
 
       return true;
-    }
-  }, {
-    key: 'trySplitFreeNodeVertically',
-    value: function trySplitFreeNodeVertically(freeNode, usedNode) {
+    } }, { key: 'trySplitFreeNodeVertically', value: function trySplitFreeNodeVertically(
+
+    freeNode, usedNode) {
       if (usedNode.x < freeNode.x + freeNode.width && usedNode.x + usedNode.width > freeNode.x) {
         this.tryLeaveFreeSpaceAtTop(freeNode, usedNode);
         this.tryLeaveFreeSpaceAtBottom(freeNode, usedNode);
       }
-    }
-  }, {
-    key: 'tryLeaveFreeSpaceAtTop',
-    value: function tryLeaveFreeSpaceAtTop(freeNode, usedNode) {
+    } }, { key: 'tryLeaveFreeSpaceAtTop', value: function tryLeaveFreeSpaceAtTop(
+
+    freeNode, usedNode) {
       if (usedNode.y > freeNode.y && usedNode.y < freeNode.y + freeNode.height) {
         var newNode = _extends({}, freeNode);
         newNode.height = usedNode.y - newNode.y;
         this.freeRectangles.push(newNode);
       }
-    }
-  }, {
-    key: 'tryLeaveFreeSpaceAtBottom',
-    value: function tryLeaveFreeSpaceAtBottom(freeNode, usedNode) {
+    } }, { key: 'tryLeaveFreeSpaceAtBottom', value: function tryLeaveFreeSpaceAtBottom(
+
+    freeNode, usedNode) {
       if (usedNode.y + usedNode.height < freeNode.y + freeNode.height) {
         var newNode = _extends({}, freeNode);
         newNode.y = usedNode.y + usedNode.height;
         newNode.height = freeNode.y + freeNode.height - (usedNode.y + usedNode.height);
         this.freeRectangles.push(newNode);
       }
-    }
-  }, {
-    key: 'trySplitFreeNodeHorizontally',
-    value: function trySplitFreeNodeHorizontally(freeNode, usedNode) {
+    } }, { key: 'trySplitFreeNodeHorizontally', value: function trySplitFreeNodeHorizontally(
+
+    freeNode, usedNode) {
       if (usedNode.y < freeNode.y + freeNode.height && usedNode.y + usedNode.height > freeNode.y) {
         this.tryLeaveFreeSpaceOnLeft(freeNode, usedNode);
         this.tryLeaveFreeSpaceOnRight(freeNode, usedNode);
       }
-    }
-  }, {
-    key: 'tryLeaveFreeSpaceOnLeft',
-    value: function tryLeaveFreeSpaceOnLeft(freeNode, usedNode) {
+    } }, { key: 'tryLeaveFreeSpaceOnLeft', value: function tryLeaveFreeSpaceOnLeft(
+
+    freeNode, usedNode) {
       if (usedNode.x > freeNode.x && usedNode.x < freeNode.x + freeNode.width) {
         var newNode = _extends({}, freeNode);
         newNode.width = usedNode.x - newNode.x;
         this.freeRectangles.push(newNode);
       }
-    }
-  }, {
-    key: 'tryLeaveFreeSpaceOnRight',
-    value: function tryLeaveFreeSpaceOnRight(freeNode, usedNode) {
+    } }, { key: 'tryLeaveFreeSpaceOnRight', value: function tryLeaveFreeSpaceOnRight(
+
+    freeNode, usedNode) {
       if (usedNode.x + usedNode.width < freeNode.x + freeNode.width) {
         var newNode = _extends({}, freeNode);
         newNode.x = usedNode.x + usedNode.width;
@@ -503,12 +353,9 @@ var Bin = function () {
     }
 
     /**
-     * Goes through the free rectangle list and removes any redundant entries.
-     */
-
-  }, {
-    key: 'pruneFreeList',
-    value: function pruneFreeList() {
+       * Goes through the free rectangle list and removes any redundant entries.
+       */ }, { key: 'pruneFreeList', value: function pruneFreeList()
+    {
       var i = 0;
       while (i < this.freeRectangles.length) {
         var j = i + 1;
@@ -529,96 +376,50 @@ var Bin = function () {
           i++;
         }
       }
-    }
-  }, {
-    key: 'isContainedIn',
-    value: function isContainedIn(rectA, rectB) {
-      return rectA && rectB && rectA.x >= rectB.x && rectA.y >= rectB.y && rectA.x + rectA.width <= rectB.x + rectB.width && rectA.y + rectA.height <= rectB.y + rectB.height;
-    }
-  }, {
-    key: 'area',
-    get: function get() {
-      return this.width * this.height;
-    }
-  }, {
-    key: 'efficiency',
-    get: function get() {
-      var boxesArea = 0;
-      this.boxes.forEach(function (box) {
-        boxesArea += box.area;
-      });
-      return boxesArea * 100 / this.area;
-    }
-  }, {
-    key: 'label',
-    get: function get() {
-      return this.width + 'x' + this.height + ' ' + this.efficiency + '%';
-    }
-  }]);
+    } }, { key: 'isContainedIn', value: function isContainedIn(
 
-  return Bin;
-}();
+    rectA, rectB) {
+      return rectA && rectB &&
+      rectA.x >= rectB.x && rectA.y >= rectB.y &&
+      rectA.x + rectA.width <= rectB.x + rectB.width &&
+      rectA.y + rectA.height <= rectB.y + rectB.height;
+    } }, { key: 'area', get: function get() {return this.width * this.height;} }, { key: 'efficiency', get: function get() {var boxesArea = 0;this.boxes.forEach(function (box) {boxesArea += box.area;});return boxesArea * 100 / this.area;} }, { key: 'label', get: function get() {return this.width + 'x' + this.height + ' ' + this.efficiency + '%';} }]);return Bin;}();exports.default = Bin;var
 
-exports.default = Bin;
 
-var FreeSpaceBox = exports.FreeSpaceBox = function FreeSpaceBox(width, height) {
-  _classCallCheck(this, FreeSpaceBox);
+FreeSpaceBox = exports.FreeSpaceBox =
 
-  this.x = 0;
-  this.y = 0;
-  this.width = null;
-  this.height = null;
 
+
+
+
+
+function FreeSpaceBox(width, height) {_classCallCheck(this, FreeSpaceBox);this.x = 0;this.y = 0;this.width = null;this.height = null;
   this.width = width;
   this.height = height;
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _Score = __webpack_require__(0);var _Score2 = _interopRequireDefault(_Score);
+var _ScoreBoard = __webpack_require__(10);var _ScoreBoard2 = _interopRequireDefault(_ScoreBoard);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var
+
+Packer = function () {
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Score = __webpack_require__(0);
-
-var _Score2 = _interopRequireDefault(_Score);
-
-var _ScoreBoard = __webpack_require__(9);
-
-var _ScoreBoard2 = _interopRequireDefault(_ScoreBoard);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Packer = function () {
-  function Packer(bins) {
-    _classCallCheck(this, Packer);
-
-    this.bins = [];
-    this.unpackedBoxes = [];
-
+  function Packer(bins) {_classCallCheck(this, Packer);this.bins = [];this.unpackedBoxes = [];
     this.bins = bins;
-  }
+  }_createClass(Packer, [{ key: 'pack', value: function pack(
 
-  _createClass(Packer, [{
-    key: 'pack',
-    value: function pack(boxes) {
-      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
+    boxes) {var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       var packedBoxes = [];
       var entry = void 0;
 
-      boxes = boxes.filter(function (box) {
-        return !box.packed;
-      });
+      boxes = boxes.filter(function (box) {return !box.packed;});
       if (boxes.length === 0) return packedBoxes;
 
       var limit = options.limit || _Score2.default.MAX_INT;
@@ -639,92 +440,50 @@ var Packer = function () {
       });
 
       return packedBoxes;
-    }
-  }]);
-
-  return Packer;
-}();
-
-exports.default = Packer;
+    } }]);return Packer;}();exports.default = Packer;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // #       box_1 box_2 box_3 ...
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}(); // #       box_1 box_2 box_3 ...
 // # bin_1  100   200    0
 // # bin_2   0     5     0
 // # bin_3   9    100    0
 // # ...
+var _ScoreBoardEntry = __webpack_require__(11);var _ScoreBoardEntry2 = _interopRequireDefault(_ScoreBoardEntry);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;} else {return Array.from(arr);}}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var
+
+ScoreBoard = function () {
 
 
-var _ScoreBoardEntry = __webpack_require__(10);
 
-var _ScoreBoardEntry2 = _interopRequireDefault(_ScoreBoardEntry);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ScoreBoard = function () {
-  function ScoreBoard(bins, boxes) {
-    var _this = this;
-
-    _classCallCheck(this, ScoreBoard);
-
-    this.entries = [];
-
+  function ScoreBoard(bins, boxes) {var _this = this;_classCallCheck(this, ScoreBoard);this.entries = [];
     bins.forEach(function (bin) {
       _this.addBinEntries(bin, boxes);
     });
-  }
+  }_createClass(ScoreBoard, [{ key: 'debug', value: function debug()
 
-  _createClass(ScoreBoard, [{
-    key: 'debug',
-    value: function debug() {
-      __webpack_require__(11);
-      console.table(this.entries.map(function (entry) {
-        return { bin: entry.bin.label, box: entry.box.label, score: entry.score };
-      }));
-    }
-  }, {
-    key: 'addBinEntries',
-    value: function addBinEntries(bin, boxes) {
-      var _this2 = this;
+    {
+      __webpack_require__(12);
+      console.table(this.entries.map(function (entry) {return { bin: entry.bin.label, box: entry.box.label, score: entry.score };}));
+    } }, { key: 'addBinEntries', value: function addBinEntries(
 
+    bin, boxes) {var _this2 = this;
       boxes.forEach(function (box) {
         var entry = new _ScoreBoardEntry2.default(bin, box);
         entry.calculate();
         _this2.entries.push(entry);
       });
-    }
-  }, {
-    key: 'any',
-    value: function any() {
-      return this.boxes.some(function (box) {
-        return box;
-      });
-    }
-  }, {
-    key: 'largestNotFitingBox',
-    value: function largestNotFitingBox() {
-      var _this3 = this;
+    } }, { key: 'any', value: function any()
 
+    {
+      return this.boxes.some(function (box) {return box;});
+    } }, { key: 'largestNotFitingBox', value: function largestNotFitingBox()
+
+    {var _this3 = this;
       var unfit = null;
-      var fittingBoxes = this.entries.filter(function (entry) {
-        return entry.fit;
-      }).map(function (entry) {
-        return entry.box;
-      });
+      var fittingBoxes = this.entries.filter(function (entry) {return entry.fit;}).map(function (entry) {return entry.box;});
 
       this.entries.forEach(function (entry) {
         if (!_this3.fittingBoxes.contains(entry.box)) {
@@ -736,10 +495,9 @@ var ScoreBoard = function () {
       });
 
       return unfit.box ? unfit : false;
-    }
-  }, {
-    key: 'bestFit',
-    value: function bestFit() {
+    } }, { key: 'bestFit', value: function bestFit()
+
+    {
       var best = null;
       for (var i = 0; i < this.entries.length; i++) {
         var entry = this.entries[i];
@@ -751,89 +509,53 @@ var ScoreBoard = function () {
         }
       }
       return best;
-    }
-  }, {
-    key: 'removeBox',
-    value: function removeBox(box) {
+    } }, { key: 'removeBox', value: function removeBox(
+
+    box) {
       this.entries = this.entries.filter(function (entry) {
         return entry.box !== box;
       });
-    }
-  }, {
-    key: 'addBin',
-    value: function addBin(bin) {
+    } }, { key: 'addBin', value: function addBin(
+
+    bin) {
       this.addBinEntries(bin, this.currentBoxes());
-    }
-  }, {
-    key: 'recalculateBin',
-    value: function recalculateBin(bin) {
-      this.entries.filter(function (entry) {
-        return entry.bin === bin;
-      }).forEach(function (entry) {
-        return entry.calculate();
-      });
-    }
-  }, {
-    key: 'currentBoxes',
-    value: function currentBoxes() {
-      return [].concat(_toConsumableArray(new Set(this.entries.map(function (entry) {
-        return entry.box;
-      }))));
-    }
-  }]);
+    } }, { key: 'recalculateBin', value: function recalculateBin(
 
-  return ScoreBoard;
-}();
+    bin) {
+      this.entries.filter(function (entry) {return entry.bin === bin;}).forEach(function (entry) {return entry.calculate();});
+    } }, { key: 'currentBoxes', value: function currentBoxes()
 
-exports.default = ScoreBoard;
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var ScoreBoardEntry = function () {
-  function ScoreBoardEntry(bin, box) {
-    _classCallCheck(this, ScoreBoardEntry);
-
-    this.bin = null;
-    this.box = null;
-    this.score = null;
-
-    this.bin = bin;
-    this.box = box;
-  }
-
-  _createClass(ScoreBoardEntry, [{
-    key: "calculate",
-    value: function calculate() {
-      this.score = this.bin.scoreFor(this.box);
-      return this.score;
-    }
-  }, {
-    key: "fit",
-    value: function fit() {
-      return !this.score.isBlank();
-    }
-  }]);
-
-  return ScoreBoardEntry;
-}();
-
-exports.default = ScoreBoardEntry;
+    {
+      return [].concat(_toConsumableArray(new Set(this.entries.map(function (entry) {return entry.box;}))));
+    } }]);return ScoreBoard;}();exports.default = ScoreBoard;
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var ScoreBoardEntry = function () {
+
+
+
+
+
+  function ScoreBoardEntry(bin, box) {_classCallCheck(this, ScoreBoardEntry);this.bin = null;this.box = null;this.score = null;
+    this.bin = bin;
+    this.box = box;
+  }_createClass(ScoreBoardEntry, [{ key: "calculate", value: function calculate()
+
+    {
+      this.score = this.bin.scoreFor(this.box);
+      return this.score;
+    } }, { key: "fit", value: function fit()
+
+    {
+      return !this.score.isBlank();
+    } }]);return ScoreBoardEntry;}();exports.default = ScoreBoardEntry;
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -861,7 +583,7 @@ exports.default = ScoreBoardEntry;
     var isArrayOfStrings = isArrayOf.bind(null, isString);
     var isArrayOfArrays = isArrayOf.bind(null, Array.isArray);
 
-    var Table = __webpack_require__(12);
+    var Table = __webpack_require__(13);
 
     function arrayToString(arr) {
       var t = new Table();
@@ -956,7 +678,7 @@ exports.default = ScoreBoardEntry;
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = Table
@@ -1400,213 +1122,64 @@ Table.prototype.log = function() {
 
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _BestAreaFit = __webpack_require__(14);
-
-Object.defineProperty(exports, 'BestAreaFit', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_BestAreaFit).default;
-  }
-});
-
-var _BestLongSideFit = __webpack_require__(15);
-
-Object.defineProperty(exports, 'BestLongSideFit', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_BestLongSideFit).default;
-  }
-});
-
-var _BestShortSideFit = __webpack_require__(2);
-
-Object.defineProperty(exports, 'BestShortSideFit', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_BestShortSideFit).default;
-  }
-});
-
-var _BottomLeft = __webpack_require__(16);
-
-Object.defineProperty(exports, 'BottomLeft', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_BottomLeft).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Base2 = __webpack_require__(1);
-
-var _Base3 = _interopRequireDefault(_Base2);
-
-var _Score = __webpack_require__(0);
-
-var _Score2 = _interopRequireDefault(_Score);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BestAreaFit = function (_Base) {
-  _inherits(BestAreaFit, _Base);
-
-  function BestAreaFit() {
-    _classCallCheck(this, BestAreaFit);
-
-    return _possibleConstructorReturn(this, (BestAreaFit.__proto__ || Object.getPrototypeOf(BestAreaFit)).apply(this, arguments));
-  }
-
-  _createClass(BestAreaFit, [{
-    key: 'calculateScore',
-    value: function calculateScore(freeRect, rectWidth, rectHeight) {
-      var areaFit = freeRect.width * freeRect.height - rectWidth * rectHeight;
-      var leftOverHoriz = Math.abs(freeRect.width - rectWidth);
-      var leftOverVert = Math.abs(freeRect.height - rectHeight);
-      var shortSideFit = Math.min(leftOverHoriz, leftOverVert);
-      return new _Score2.default(areaFit, shortSideFit);
-    }
-  }]);
-
-  return BestAreaFit;
-}(_Base3.default);
-
-exports.default = BestAreaFit;
+Object.defineProperty(exports, "__esModule", { value: true });var _BestAreaFit = __webpack_require__(15);Object.defineProperty(exports, 'BestAreaFit', { enumerable: true, get: function get() {return _interopRequireDefault(_BestAreaFit).default;} });var _BestLongSideFit = __webpack_require__(16);Object.defineProperty(exports, 'BestLongSideFit', { enumerable: true, get: function get() {return _interopRequireDefault(_BestLongSideFit).
+    default;} });var _BestShortSideFit = __webpack_require__(2);Object.defineProperty(exports, 'BestShortSideFit', { enumerable: true, get: function get() {return _interopRequireDefault(_BestShortSideFit).
+    default;} });var _BottomLeft = __webpack_require__(17);Object.defineProperty(exports, 'BottomLeft', { enumerable: true, get: function get() {return _interopRequireDefault(_BottomLeft).
+    default;} });function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _Base2 = __webpack_require__(1);var _Base3 = _interopRequireDefault(_Base2);
+var _Score = __webpack_require__(0);var _Score2 = _interopRequireDefault(_Score);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
 
+BestAreaFit = function (_Base) {_inherits(BestAreaFit, _Base);function BestAreaFit() {_classCallCheck(this, BestAreaFit);return _possibleConstructorReturn(this, (BestAreaFit.__proto__ || Object.getPrototypeOf(BestAreaFit)).apply(this, arguments));}_createClass(BestAreaFit, [{ key: 'calculateScore', value: function calculateScore(
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Base2 = __webpack_require__(1);
-
-var _Base3 = _interopRequireDefault(_Base2);
-
-var _Score = __webpack_require__(0);
-
-var _Score2 = _interopRequireDefault(_Score);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BestLongSideFit = function (_Base) {
-  _inherits(BestLongSideFit, _Base);
-
-  function BestLongSideFit() {
-    _classCallCheck(this, BestLongSideFit);
-
-    return _possibleConstructorReturn(this, (BestLongSideFit.__proto__ || Object.getPrototypeOf(BestLongSideFit)).apply(this, arguments));
-  }
-
-  _createClass(BestLongSideFit, [{
-    key: 'calculateScore',
-    value: function calculateScore(freeRect, rectWidth, rectHeight) {
+    freeRect, rectWidth, rectHeight) {
+      var areaFit = freeRect.width * freeRect.height - rectWidth * rectHeight;
       var leftOverHoriz = Math.abs(freeRect.width - rectWidth);
       var leftOverVert = Math.abs(freeRect.height - rectHeight);
-      var args = [leftOverHoriz, leftOverVert].sort(function (a, b) {
-        return a - b;
-      }).reverse();
-      return new _Score2.default(args[0], args[1]);
-    }
-  }]);
-
-  return BestLongSideFit;
-}(_Base3.default);
-
-exports.default = BestLongSideFit;
+      var shortSideFit = Math.min(leftOverHoriz, leftOverVert);
+      return new _Score2.default(areaFit, shortSideFit);
+    } }]);return BestAreaFit;}(_Base3.default);exports.default = BestAreaFit;
 
 /***/ }),
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _Base2 = __webpack_require__(1);var _Base3 = _interopRequireDefault(_Base2);
+var _Score = __webpack_require__(0);var _Score2 = _interopRequireDefault(_Score);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
 
+BestLongSideFit = function (_Base) {_inherits(BestLongSideFit, _Base);function BestLongSideFit() {_classCallCheck(this, BestLongSideFit);return _possibleConstructorReturn(this, (BestLongSideFit.__proto__ || Object.getPrototypeOf(BestLongSideFit)).apply(this, arguments));}_createClass(BestLongSideFit, [{ key: 'calculateScore', value: function calculateScore(
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+    freeRect, rectWidth, rectHeight) {
+      var leftOverHoriz = Math.abs(freeRect.width - rectWidth);
+      var leftOverVert = Math.abs(freeRect.height - rectHeight);
+      var args = [leftOverHoriz, leftOverVert].sort(function (a, b) {return a - b;}).reverse();
+      return new _Score2.default(args[0], args[1]);
+    } }]);return BestLongSideFit;}(_Base3.default);exports.default = BestLongSideFit;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _Base2 = __webpack_require__(1);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _Base2 = __webpack_require__(1);var _Base3 = _interopRequireDefault(_Base2);
+var _Score = __webpack_require__(0);var _Score2 = _interopRequireDefault(_Score);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
 
-var _Base3 = _interopRequireDefault(_Base2);
+BottomLeft = function (_Base) {_inherits(BottomLeft, _Base);function BottomLeft() {_classCallCheck(this, BottomLeft);return _possibleConstructorReturn(this, (BottomLeft.__proto__ || Object.getPrototypeOf(BottomLeft)).apply(this, arguments));}_createClass(BottomLeft, [{ key: 'calculateScore', value: function calculateScore(
 
-var _Score = __webpack_require__(0);
-
-var _Score2 = _interopRequireDefault(_Score);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BottomLeft = function (_Base) {
-  _inherits(BottomLeft, _Base);
-
-  function BottomLeft() {
-    _classCallCheck(this, BottomLeft);
-
-    return _possibleConstructorReturn(this, (BottomLeft.__proto__ || Object.getPrototypeOf(BottomLeft)).apply(this, arguments));
-  }
-
-  _createClass(BottomLeft, [{
-    key: 'calculateScore',
-    value: function calculateScore(freeRect, rectWidth, rectHeight) {
+    freeRect, rectWidth, rectHeight) {
       var topSideY = freeRect.y + rectHeight;
       return new _Score2.default(topSideY, freeRect.x);
-    }
-  }]);
-
-  return BottomLeft;
-}(_Base3.default);
-
-exports.default = BottomLeft;
+    } }]);return BottomLeft;}(_Base3.default);exports.default = BottomLeft;
 
 /***/ })
 /******/ ]);
