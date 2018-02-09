@@ -6,12 +6,19 @@ import {
   HeightAxis,
   DepthAxis
 } from './Item';
+import { setRoundingFactor } from './util';
 
 export default class Packer {
 
   bins = [];
   items = [];
   unfitItems = [];
+
+  constructor(rf = null) {
+    if ( null !== rf ) {
+      setRoundingFactor( rf );
+    }
+  }
 
   addBin(bin) {
     this.bins.push(bin);

@@ -1,7 +1,16 @@
 /**
  * Precision to retain in factoredInteger()
  */
-const FACTOR = 5;
+let FACTOR = 5;
+
+/**
+ * Set a new value for the rounding factor
+ * 
+ * @param Integer newFactor 
+ */
+export const setRoundingFactor = ( newFactor ) => {
+    FACTOR = newFactor;
+}
 
 /**
  * Factor a number by FACTOR and round to the nearest whole number
