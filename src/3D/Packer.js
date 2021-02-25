@@ -129,11 +129,11 @@ export default class Packer {
 
   pack() {
     this.bins.sort((a, b) => {
-      return a.getVolume() > b.getVolume();
+      return b.getVolume() - a.getVolume();
     });
 
     this.items.sort((a, b) => {
-      return a.getVolume() > b.getVolume();
+      return b.getVolume() - a.getVolume();
     });
 
     while (this.items.length > 0) {
