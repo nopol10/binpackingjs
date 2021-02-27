@@ -221,12 +221,14 @@ Packer = function () {function Packer() {_classCallCheck(this, Packer);this.
     } }, { key: 'pack', value: function pack()
 
     {
+      // Sort bins smallest to largest.
       this.bins.sort(function (a, b) {
-        return a.getVolume() > b.getVolume();
+        return a.getVolume() - b.getVolume();
       });
 
+      // Sort items largest to smallest.
       this.items.sort(function (a, b) {
-        return a.getVolume() > b.getVolume();
+        return b.getVolume() - a.getVolume();
       });
 
       while (this.items.length > 0) {
@@ -304,15 +306,81 @@ Bin = function () {
     item) {
       var maxWeight = this.getMaxWeight();
       return !maxWeight || item.getWeight() + this.getPackedWeight() <= maxWeight;
+    }
+
+    /**
+       * Calculate a score for a given item and rotation type.
+       *
+       * Scores are higher for rotations that closest match item dimensions to Bin dimensions.
+       * For example, rotating the item so the longest side is aligned with the longest Bin side.
+       *
+       * Example (Bin is 11 x 8.5 x 5.5, Item is 8.1 x 5.2 x 5.2):
+       *  Rotation 0:
+       *    8.1 / 11  = 0.736
+       *    5.2 / 8.5 = 0.612
+       *    5.2 / 5.5 = 0.945
+       *    -----------------
+       *    0.736 ** 2 + 0.612 ** 2 + 0.945 ** 2 = 1.809
+       *
+       *  Rotation 1:
+       *    8.1 / 8.5 = 0.953
+       *    5.2 / 11 = 0.473
+       *    5.2 / 5.5 = 0.945
+       *    -----------------
+       *    0.953 ** 2 + 0.473 ** 2 + 0.945 ** 2 = 2.025
+       *
+       * @param {Item} item
+       * @param {int} rotationType
+       * @return {float} score
+       */ }, { key: 'scoreRotation', value: function scoreRotation(
+    item, rotationType) {
+      item.rotationType = rotationType;
+      var d = item.getDimension();
+
+      // If the item doesn't fit in the Bin
+      if (this.getWidth() < d[0] || this.getHeight() < d[1] || this.getDepth() < d[2]) {
+        return 0;
+      }
+
+      // Square the results to increase the impact of high values (e.g. > 0.8)
+      var widthScore = Math.pow(d[0] / this.getWidth(), 2);
+      var heightScore = Math.pow(d[1] / this.getHeight(), 2);
+      var depthScore = Math.pow(d[2] / this.getDepth(), 2);
+
+      return widthScore + heightScore + depthScore;
+    }
+
+    /**
+       * Calculate the best rotation order for a given Item based on scoreRotation().
+       *
+       * @param {Item} item
+       * @return {Array} Rotation types sorted by their score, DESC
+       */ }, { key: 'getBestRotationOrder', value: function getBestRotationOrder(
+    item) {
+      var rotationScores = {};
+
+      // Score all rotation types
+      for (var i = 0; i < 6; i++) {
+        rotationScores[i] = this.scoreRotation(item, i);
+      }
+
+      // Sort the rotation types (index of scores object) DESC
+      // and ensure Int values (Object.keys returns strings)
+      var sortedRotations = Object.keys(rotationScores).sort(function (a, b) {
+        return rotationScores[b] - rotationScores[a];
+      }).map(Number);
+
+      return sortedRotations;
     } }, { key: 'putItem', value: function putItem(
 
     item, p) {
       var box = this;
       var fit = false;
-
+      var rotations = this.getBestRotationOrder(item);
       item.position = p;
-      for (var i = 0; i < 6; i++) {
-        item.rotationType = i;
+
+      for (var i = 0; i < rotations.length; i++) {
+        item.rotationType = rotations[i];
         var d = item.getDimension();
 
         if (box.getWidth() < p[0] + d[0] || box.getHeight() < p[1] + d[1] || box.getDepth() < p[2] + d[2]) {

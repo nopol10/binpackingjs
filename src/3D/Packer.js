@@ -128,13 +128,15 @@ export default class Packer {
   }
 
   pack() {
-    this.bins.sort((a, b) => {
-      return b.getVolume() - a.getVolume();
-    });
+	  // Sort bins smallest to largest.
+	  this.bins.sort((a, b) => {
+		  return a.getVolume() - b.getVolume();
+	  });
 
-    this.items.sort((a, b) => {
-      return b.getVolume() - a.getVolume();
-    });
+	  // Sort items largest to smallest.
+	  this.items.sort((a, b) => {
+		  return b.getVolume() - a.getVolume();
+	  });
 
     while (this.items.length > 0) {
       let bin = this.findFittedBin(this.items[0]);

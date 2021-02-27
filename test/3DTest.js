@@ -95,8 +95,8 @@ const testDatas = [
     }
   },
   {
-    name: 'Two items fit but item in between does not.',
-    bins: [
+    name: 'Big item is packed first.',
+  bins: [
       new Bin("Bin 1", 100, 100, 100, 1000),
     ],
     items: [
@@ -105,8 +105,8 @@ const testDatas = [
       new Item("Item 3", 50, 100, 100, 100),
     ],
     expectation: function (packer) {
-      return packer.bins[0].items.length === 2
-        && packer.unfitItems.length === 1;
+      return packer.bins[0].items.length === 1
+        && packer.unfitItems.length === 2;
     }
   },
   {
@@ -140,6 +140,29 @@ const testDatas = [
         && packer.unfitItems.length === 0;
     }
   },
+  {
+    name: 'Larger items are tried first.',
+    bins: [
+      new Bin( "Small Bin", 50, 100, 100, 1000 ),
+      new Bin( "Bigger Bin", 150, 100, 100, 1000 ),
+      new Bin( "Small Bin", 50, 100, 100, 1000 ),
+    ],
+    items: [
+      new Item( "Item 1 Small", 50, 100, 100, 100 ),
+      new Item( "Item 3 Small", 50, 100, 100, 100 ),
+      new Item( "Item 3 Small", 50, 100, 100, 100 ),
+      new Item( "Item 2 Big", 100, 100, 100, 100 ),
+    ],
+    expectation: function( packer ) {
+      // Big bin should have big item and 1 small item
+      // Small bins should have 1 small item
+      return packer.bins[ 2 ].name === 'Bigger Bin'
+        && packer.bins[ 2 ].items.length === 2
+        && packer.bins[ 0 ].name === 'Small Bin'
+        && packer.bins[ 0 ].items.length === 1
+        && packer.unfitItems.length === 0;
+    }
+  }
 ];
 
 describe('bp3d.js', function() {
