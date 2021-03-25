@@ -2,13 +2,15 @@ export default class Box {
 
   width = null
   height = null
+  id = ""
   x = 0
   y = 0
   packed = false
 
-  constructor(width, height) {
+  constructor(width, height, id) {
     this.width = width;
     this.height = height;
+    this.id = id;
   }
 
   rotate() {
@@ -18,7 +20,7 @@ export default class Box {
   }
 
   get label() {
-    return `${this.width}x${this.height} at [${this.x},${this.y}]`;
+    return `${id}: ${this.width}x${this.height} at [${this.x},${this.y}]`;
   }
 
   get area() {
